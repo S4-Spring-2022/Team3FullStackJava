@@ -17,22 +17,26 @@ public class Person {
     private String lastName;
     private String email;
     private String phone;
-    private String address;
+    private Address address; // changed to type Address
 
     public Person() {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
         this.phone = "";
-        this.address = "";
+        this.address = null; // changed to null to handle type Address
     }
 
-    public Person(String firstName, String lastName, String email, String phone, String address) {
+    public Person(String firstName, String lastName, String email, String phone, Address address) { 
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.address = address;
+        this.address = address; // changed to type Address in the params
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -67,11 +71,11 @@ public class Person {
         this.phone = phone;
     }
 
-    public String getAddress() {
+    public Address getAddress() { // changed to type Address
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) { // changed to type Address
         this.address = address;
     }
 

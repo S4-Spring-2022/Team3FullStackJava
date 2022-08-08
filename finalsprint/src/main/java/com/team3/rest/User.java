@@ -30,8 +30,8 @@ public class User {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = Long.valueOf(id);
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -58,4 +58,7 @@ public class User {
         this.person = person;
     }
     
+    public String toString() {
+        return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", person=" + person + "]";
+    }
 }
