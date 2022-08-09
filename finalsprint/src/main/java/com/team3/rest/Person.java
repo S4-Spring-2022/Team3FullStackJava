@@ -1,9 +1,12 @@
 package com.team3.rest;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -17,6 +20,8 @@ public class Person {
     private String lastName;
     private String email;
     private String phone;
+
+    @OneToOne
     private Address address; // changed to type Address
 
     public Person() {
@@ -27,7 +32,7 @@ public class Person {
         this.address = null; // changed to null to handle type Address
     }
 
-    public Person(String firstName, String lastName, String email, String phone, Address address) { 
+    public Person(String firstName, String lastName, String email, String phone, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
