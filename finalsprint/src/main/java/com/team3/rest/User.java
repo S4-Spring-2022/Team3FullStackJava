@@ -1,9 +1,11 @@
 package com.team3.rest;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -12,9 +14,11 @@ public class User {
     @SequenceGenerator(name = "user_seq", sequenceName = "user_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
     private Long id;
-    
+
     private String userName;
     private String password;
+
+    @OneToOne
     private Person person;
 
     public User() {
@@ -57,7 +61,7 @@ public class User {
     public void setPerson(Person person) {
         this.person = person;
     }
-    
+
     public String toString() {
         return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", person=" + person + "]";
     }
