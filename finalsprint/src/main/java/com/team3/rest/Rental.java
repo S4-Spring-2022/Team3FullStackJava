@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -16,6 +17,7 @@ public class Rental {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rental_seq")
     private Long id;
 
+    @OneToOne // unsure if this disqualifies the user from managing multiple rentals??
     private User rentalManager;
     private String rentalStatus;
     private String rentalType;
@@ -23,6 +25,7 @@ public class Rental {
     private String rentalScore;
     private double rentalPrice;
     private String rentalDescription;
+    @OneToOne
     private Address rentalAddress;
 
     public Rental() {
