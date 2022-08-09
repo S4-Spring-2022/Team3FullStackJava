@@ -11,6 +11,9 @@ import com.team3.rest.UserRepository;
 import com.team3.rest.User;
 import com.team3.rest.Person;
 
+import java.util.List;
+
+
 @ExtendWith(MockitoExtension.class)
 public class UserRepositoryTest {
 
@@ -19,8 +22,8 @@ public class UserRepositoryTest {
     
     @Test
     public void test() {
-        Mockito.when(userRepository.findByUserName("user")).thenReturn(new User("user", "password", new Person()));
-        assertEquals("user", userRepository.findByUserName("user").getUserName());
+
+        
 
     }
         
