@@ -35,6 +35,15 @@ public class Address {
         this.country = country;
     }
 
+    // added id get and set methods
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getStreet() {
         return street;
     }
