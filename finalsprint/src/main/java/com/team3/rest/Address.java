@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -18,6 +19,9 @@ public class Address {
     private String province;
     private String postalCode;
     private String country;
+
+    @OneToOne(mappedBy = "address")
+    private Person person;
 
     public Address() {
         this.street = "";
