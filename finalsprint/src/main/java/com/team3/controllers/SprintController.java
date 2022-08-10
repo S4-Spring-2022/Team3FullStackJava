@@ -56,6 +56,4 @@ public class SprintController {
         return addressRepository.findByProvince(province);
     }
 
-
-    
 }
