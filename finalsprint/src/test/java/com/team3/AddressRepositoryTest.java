@@ -25,7 +25,7 @@ public class AddressRepositoryTest {
     Address address4 = new Address("012 Main Street", "Mount Pearl", "NL", "D4D 4D4", "Canada");
     Address address5 = new Address("345 Main Street", "Montreal", "QC", "E5E 5E5", "Canada");
 
-    List<Address> addressList = List.of(address);
+    List<Address> addressList = List.of(address, address2, address3, address4, address5);
 
     @Test
     public void testFindByStreet() {
