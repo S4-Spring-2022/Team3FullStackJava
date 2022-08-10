@@ -44,6 +44,16 @@ public class SprintController {
         return rentalRepository.findByRentalScore(rentalScore);
     }
 
+    @GetMapping("/search/rental/rentalPrice/{rentalPrice}")
+    public List<Rental> searchRentalByRentalPrice(@RequestParam(value = "rentalPrice") double rentalPrice) {
+        return rentalRepository.findByRentalPrice(rentalPrice);
+    }
+
+    @GetMapping("/search/rental/rentalAddress/{rentalAddress}")
+    public List<Rental> searchRentalByRentalAddress(@RequestParam(value = "rentalAddress") Address rentalAddress) {
+        return rentalRepository.findByRentalAddress(rentalAddress);
+    }
+
     @GetMapping("/search/address/street/{street}")
     public List<Address> searchAddressByStreet(@RequestParam(value = "street") String street) {
         return addressRepository.findByStreet(street);
@@ -57,6 +67,16 @@ public class SprintController {
     @GetMapping("/search/address/province/{province}")
     public List<Address> searchAddressByProvince(@RequestParam(value = "province") String province) {
         return addressRepository.findByProvince(province);
+    }
+
+    @GetMapping("/search/address/postalCode/{postalCode}")
+    public List<Address> searchAddressByPostalCode(@RequestParam(value = "postalCode") String postalCode) {
+        return addressRepository.findByPostalCode(postalCode);
+    }
+
+    @GetMapping("/search/address/country/{country}")
+    public List<Address> searchAddressByCountry(@RequestParam(value = "country") String country) {
+        return addressRepository.findByCountry(country);
     }
 
 }
