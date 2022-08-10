@@ -14,6 +14,12 @@ import com.team3.rest.*;
 public class SprintController {
 
     private RentalRepository rentalRepository;
+    private AddressRepository addressRepository;
+
+    public SprintController(RentalRepository rentalRepository, AddressRepository addressRepository) {
+        this.rentalRepository = rentalRepository;
+        this.addressRepository = addressRepository;
+    }
 
     @GetMapping("/search/rental/rentalManager/{rentalManager}")
     public List<Rental> searchRentalByRentalManager(@RequestParam(value = "rentalManager") User rentalManager) {
@@ -33,6 +39,21 @@ public class SprintController {
     @GetMapping("/search/rental/rentalScore/{rentalScore}")
     public List<Rental> searchRentalByRentalScore(@RequestParam(value = "rentalScore") String rentalScore) {
         return rentalRepository.findByRentalScore(rentalScore);
+    }
+
+    @GetMapping("/search/address/street/{street}")
+    public List<Address> searchAddressByStreet(@RequestParam(value = "street") String street) {
+        return addressRepository.findByStreet(street);
+    }
+
+    @GetMapping("/search/address/city/{city}")
+    public List<Address> searchAddressByCity(@RequestParam(value = "city") String city) {
+        return addressRepository.findByCity(city);
+    }
+
+    @GetMapping("/search/address/province/{province}")
+    public List<Address> searchAddressByProvince(@RequestParam(value = "province") String province) {
+        return addressRepository.findByProvince(province);
     }
 
 
