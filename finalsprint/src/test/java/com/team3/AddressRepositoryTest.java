@@ -19,14 +19,18 @@ public class AddressRepositoryTest {
     @Mock
     private AddressRepository addressRepository = Mockito.mock(AddressRepository.class);
 
-    Address address = new Address("123 Main Street", "St. John's", "NL", "A1N 1A1", "Canada");
+    Address address = new Address("123 Main Street", "St. John's", "NL", "A1A 1A1", "Canada");
+    Address address2 = new Address("456 Main Street", "Halifax", "NS", "B2B 2B2", "Canada");
+    Address address3 = new Address("789 Main Street", "Toronto", "ON", "C3C 3C3", "Canada");
+    Address address4 = new Address("012 Main Street", "Mount Pearl", "NL", "D4D 4D4", "Canada");
+    Address address5 = new Address("345 Main Street", "Montreal", "QC", "E5E 5E5", "Canada");
 
     List<Address> addressList = List.of(address);
 
     @Test
     public void testFindByStreet() {
-        Mockito.when(addressRepository.findByStreet("55 Main Street")).thenReturn(addressList);
-        List<Address> foundStreet = addressRepository.findByStreet("55 Main Street");
+        Mockito.when(addressRepository.findByStreet("123 Main Street")).thenReturn(addressList);
+        List<Address> foundStreet = addressRepository.findByStreet("123 Main Street");
         assertEquals(address, foundStreet.get(0));
     }
 
@@ -46,8 +50,8 @@ public class AddressRepositoryTest {
 
     @Test
     public void testFindByPostalCode() {
-        Mockito.when(addressRepository.findByPostalCode("A0A 0A0")).thenReturn(addressList);
-        List<Address> foundPostalCode = addressRepository.findByPostalCode("A0A 0A0");
+        Mockito.when(addressRepository.findByPostalCode("A1A 1A1")).thenReturn(addressList);
+        List<Address> foundPostalCode = addressRepository.findByPostalCode("A1A 1A1");
         assertEquals(address, foundPostalCode.get(0));
     }
 
