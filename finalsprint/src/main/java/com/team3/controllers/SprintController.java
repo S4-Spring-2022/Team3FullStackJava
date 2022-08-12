@@ -2,6 +2,8 @@ package com.team3.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,18 +14,27 @@ import com.team3.rest.*;
 
 @RestController
 public class SprintController {
-
+    @Autowired
     private RentalRepository rentalRepository;
+    @Autowired
     private AddressRepository addressRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     public SprintController(RentalRepository rentalRepository, AddressRepository addressRepository) {
         this.rentalRepository = rentalRepository;
         this.addressRepository = addressRepository;
     }
 
+    @CrossOrigin
+    @GetMapping(value="/users/{userName}", produces = "application/json")
+    public List<User> getUser(@RequestParam(value = "userName", defaultValue = "") String userName) {
+        return userRepository.findByUserName(userName);
+    }
+
     @GetMapping("/search/rental/rentalManager/{rentalManager}")
-    public List<Rental> searchRentalByRentalManager(@RequestParam(value = "rentalManager") User rentalManager) {
-        return rentalRepository.findByRentalManager(rentalManager);
+    public List<Rental> searchRentalByRentalManager(@RequestParam(value = "rentalManager") Long user_id) {
+        return rentalRepository.findByUserId(user_id);
     }
 
     @GetMapping("/search/rental/rentalStatus/{rentalStatus}")

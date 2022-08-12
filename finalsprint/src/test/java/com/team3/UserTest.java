@@ -42,7 +42,7 @@ public class UserTest {
     @Test
     public void testPerson() {
         User user = new User();
-        user.setPerson(new Person());
+        user.setPerson(1L);
         assertNotNull(user.getPerson());
     }
 

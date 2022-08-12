@@ -62,7 +62,7 @@ public class PersonTest {
     @Test
     public void testAddress() {
         Person person = new Person();
-        person.setAddress(new Address());
+        person.setAddress(1L);
         assertNotNull(person.getAddress());
     }
  

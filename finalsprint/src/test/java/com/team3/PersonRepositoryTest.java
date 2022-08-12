@@ -21,17 +21,13 @@ public class PersonRepositoryTest {
     private PersonRepository personRepository;
     
     Person person1 = 
-    new Person("John", "Doe", "john_doe@email.com", "+1 709 777-1234", 
-    new Address("123 Main Street", "St. Jphn's", "NL", "12345", "Canada"));
+    new Person("John", "Doe", "john_doe@email.com", "+1 709 777-1234", 1L);
     Person person2 = 
-    new Person("Jane", "Dock", "jane_doe@email.com", "+1 709 777-5678", 
-    new Address("456 Main Street", "St. Jphn's", "NL", "A1B 1A1", "Canada"));
+    new Person("Jane", "Dock", "jane_doe@email.com", "+1 709 777-5678", 2L);
     Person person3 = 
-    new Person("Joe", "Doe", "joe_doe@email.com", "+1 709 777-9012", 
-    new Address("789 Main Street", "St. Jphn's", "NL", "A1C 1A1", "Canada"));
+    new Person("Joe", "Doe", "joe_doe@email.com", "+1 709 777-9012", 3L);
     Person person4 = 
-    new Person("Jack", "Doe", "jack_doe@email.com", "+1 709 777-3456", 
-    new Address("012 Main Street", "St. Jphn's", "NL", "A1D 1A1", "Canada"));
+    new Person("Jack", "Doe", "jack_doe@email.com", "+1 709 777-3456", 4L);
 
     
     List<Person> personList = List.of(person1, person2, person3, person4);

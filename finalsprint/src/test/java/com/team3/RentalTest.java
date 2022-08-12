@@ -29,10 +29,10 @@ public class RentalTest {
     }
 
     @Test
-    public void testRentalManager() {
+    public void testUserId() {
         Rental rental = new Rental();
-        rental.setRentalManager(new User());
-        assertNotNull(rental.getRentalManager());
+        rental.setUserId(1L);
+        assertNotNull(rental.getUserId());
     }
 
     @Test
@@ -80,7 +80,7 @@ public class RentalTest {
     @Test
     public void testRentalAddress() {
         Rental rental = new Rental();
-        rental.setRentalAddress(new Address());
+        rental.setRentalAddress(1L);
         assertNotNull(rental.getRentalAddress());
     }
     

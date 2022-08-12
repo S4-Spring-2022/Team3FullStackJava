@@ -9,7 +9,7 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "rental", path = "rental")
 public interface RentalRepository extends JpaRepository<Rental, Long> {
 
-    List<Rental> findByRentalManager(@Param("rentalManager") User rentalManager);
+    List<Rental> findByUserId(@Param("rentalManager") Long user_id);
     
     List<Rental> findByRentalStatus(@Param("rentalStatus") String rentalStatus);
     

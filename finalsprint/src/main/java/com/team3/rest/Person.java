@@ -20,24 +20,22 @@ public class Person {
     private String lastName;
     private String email;
     private String phone;
-
-    @OneToOne
-    private Address address; // changed to type Address
+    private Long address_id; 
 
     public Person() {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
         this.phone = "";
-        this.address = null; // changed to null to handle type Address
+        this.address_id = null; 
     }
 
-    public Person(String firstName, String lastName, String email, String phone, Address address) {
+    public Person(String firstName, String lastName, String email, String phone, Long address_id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.address = address; // changed to type Address in the params
+        this.address_id = address_id; 
     }
 
     public void setId(long id) {
@@ -76,12 +74,12 @@ public class Person {
         this.phone = phone;
     }
 
-    public Address getAddress() { // changed to type Address
-        return address;
+    public Long getAddress() { // changed to type Address
+        return address_id;
     }
 
-    public void setAddress(Address address) { // changed to type Address
-        this.address = address;
+    public void setAddress(Long address_id) { // changed to type Address
+        this.address_id = address_id;
     }
 
     public Long getId() {
@@ -100,7 +98,7 @@ public class Person {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
+                ", address='" + address_id + '\'' +
                 '}';
     }
 

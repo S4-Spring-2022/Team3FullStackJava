@@ -17,17 +17,15 @@ public class User {
 
     private String userName;
     private String password;
-
-    @OneToOne
-    private Person person;
+    private Long person_id;
 
     public User() {
     }
 
-    public User(String userName, String password, Person person) {
+    public User(String userName, String password, Long person_id) {
         this.userName = userName;
         this.password = password;
-        this.person = person;
+        this.person_id = person_id;
     }
 
     public Long getId() {
@@ -54,15 +52,15 @@ public class User {
         this.password = password;
     }
 
-    public Person getPerson() {
-        return person;
+    public Long getPerson() {
+        return person_id;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPerson(Long person_id) {
+        this.person_id = person_id;
     }
 
     public String toString() {
-        return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", person=" + person + "]";
+        return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", person=" + person_id + "]";
     }
 }
