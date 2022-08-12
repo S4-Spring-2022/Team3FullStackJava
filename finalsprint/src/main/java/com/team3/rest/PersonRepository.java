@@ -17,6 +17,6 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     
     List<Person> findByPhone(@Param("phone") String phone);
     
-    List<Person> findByAddress(@Param("address") String address);
+    List<Person> findByAddressId(@Param("addressId") Long addressId);
     
 }

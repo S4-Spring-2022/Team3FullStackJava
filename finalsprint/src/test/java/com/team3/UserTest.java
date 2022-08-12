@@ -42,8 +42,8 @@ public class UserTest {
     @Test
     public void testPerson() {
         User user = new User();
-        user.setPerson(new Person());
-        assertNotNull(user.getPerson());
+        user.setPersonId(1L);
+        assertNotNull(user.getPersonId());
     }
 
     

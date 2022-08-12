@@ -62,8 +62,8 @@ public class PersonTest {
     @Test
     public void testAddress() {
         Person person = new Person();
-        person.setAddress(new Address());
-        assertNotNull(person.getAddress());
+        person.setAddressId(1L);
+        assertNotNull(person.getAddressId());
     }
  
 }

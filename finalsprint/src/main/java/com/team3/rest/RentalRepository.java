@@ -9,7 +9,7 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "rental", path = "rental")
 public interface RentalRepository extends JpaRepository<Rental, Long> {
 
-    List<Rental> findByRentalManager(@Param("rentalManager") User rentalManager);
+    List<Rental> findByUserId(@Param("userId") Long userId);
     
     List<Rental> findByRentalStatus(@Param("rentalStatus") String rentalStatus);
     
@@ -19,6 +19,6 @@ public interface RentalRepository extends JpaRepository<Rental, Long> {
     
     List<Rental> findByRentalPrice(@Param("rentalPrice") double rentalPrice); // How to set lower or upper bound?
     
-    List<Rental> findByRentalAddress(@Param("rentalAddress") Address rentalAddress); // how to search address sub-fields?
+    List<Rental> findByAddressId(@Param("addressId") Long addressId); // how to search address sub-fields?
     
 }
