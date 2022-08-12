@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
+import org.springframework.data.rest.core.annotation.RestResource;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -27,12 +29,12 @@ public class Person {
     private String email;
     private String phone;
 
-    @OneToOne(mappedBy = "person")
+    @OneToOne
     private Address address; // changed to type Address
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user; 
+    // @OneToOne(optional = false)
+    // @JoinColumn(name = "user_id", referencedColumnName = "id")
+    // private User user; 
 
     public Person() {
         this.firstName = "";

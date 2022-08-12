@@ -3,7 +3,9 @@ package com.team3.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,14 +20,23 @@ public class SprintController {
     private RentalRepository rentalRepository;
     @Autowired
     private AddressRepository addressRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-    public SprintController(RentalRepository rentalRepository, AddressRepository addressRepository) {
+    public SprintController(RentalRepository rentalRepository, AddressRepository addressRepository, UserRepository userRepository) {
         this.rentalRepository = rentalRepository;
         this.addressRepository = addressRepository;
+        this.userRepository = userRepository;
+    }
+    @CrossOrigin
+    @GetMapping(value="/users/{userName}", produces = "application/json")
+    public List<User> getUser(@RequestParam(value = "userName", defaultValue = "") String userName) {
+        return userRepository.findByUserName(userName);
     }
 
     @GetMapping("/search/rental/rentalManager/{rentalManager}")
     public List<Rental> searchRentalByRentalManager(@RequestParam(value = "rentalManager") User rentalManager) {
+        System.out.println(rentalRepository.findByRentalManager(rentalManager));
         return rentalRepository.findByRentalManager(rentalManager);
     }
 
@@ -59,6 +70,7 @@ public class SprintController {
         return addressRepository.findByStreet(street);
     }
 
+    @CrossOrigin
     @GetMapping("/search/address/city/{city}")
     public List<Address> searchAddressByCity(@RequestParam(value = "city") String city) {
         return addressRepository.findByCity(city);

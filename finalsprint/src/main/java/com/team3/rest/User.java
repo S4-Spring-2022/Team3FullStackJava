@@ -1,5 +1,7 @@
 package com.team3.rest;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,8 +22,9 @@ public class User {
     private String userName;
     private String password;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne
     private Person person;
+
 
     public User() {
     }

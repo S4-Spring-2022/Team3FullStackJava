@@ -1,12 +1,17 @@
 package com.team3.rest;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+
+
 
 @Entity
 public class Address {
@@ -21,9 +26,13 @@ public class Address {
     private String postalCode;
     private String country;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    // @OneToOne(optional = false)
+    // @JoinColumn(name = "person_id", referencedColumnName = "id")
+    @OneToOne
     private Person person;
+
+    @OneToOne
+    private Rental rental;
 
     public Address() {
         this.street = "";
