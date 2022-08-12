@@ -80,8 +80,8 @@ public class RentalTest {
     @Test
     public void testRentalAddress() {
         Rental rental = new Rental();
-        rental.setRentalAddress(1L);
-        assertNotNull(rental.getRentalAddress());
+        rental.setAddressId(1L);
+        assertNotNull(rental.getAddressId());
     }
     
 }

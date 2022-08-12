@@ -17,15 +17,15 @@ public class User {
 
     private String userName;
     private String password;
-    private Long person_id;
+    private Long personId;
 
     public User() {
     }
 
-    public User(String userName, String password, Long person_id) {
+    public User(String userName, String password, Long personId) {
         this.userName = userName;
         this.password = password;
-        this.person_id = person_id;
+        this.personId = personId;
     }
 
     public Long getId() {
@@ -52,15 +52,15 @@ public class User {
         this.password = password;
     }
 
-    public Long getPerson() {
-        return person_id;
+    public Long getPersonId() {
+        return personId;
     }
 
-    public void setPerson(Long person_id) {
-        this.person_id = person_id;
+    public void setPersonId(Long personId) {
+        this.personId = personId;
     }
 
     public String toString() {
-        return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", person=" + person_id + "]";
+        return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", person=" + personId + "]";
     }
 }

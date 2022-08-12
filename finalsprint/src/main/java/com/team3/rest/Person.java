@@ -20,22 +20,22 @@ public class Person {
     private String lastName;
     private String email;
     private String phone;
-    private Long address_id; 
+    private Long addressId; 
 
     public Person() {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
         this.phone = "";
-        this.address_id = null; 
+        this.addressId = null; 
     }
 
-    public Person(String firstName, String lastName, String email, String phone, Long address_id) {
+    public Person(String firstName, String lastName, String email, String phone, Long addressId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.address_id = address_id; 
+        this.addressId = addressId; 
     }
 
     public void setId(long id) {
@@ -74,12 +74,12 @@ public class Person {
         this.phone = phone;
     }
 
-    public Long getAddress() { // changed to type Address
-        return address_id;
+    public Long getAddressId() { // changed to type Address
+        return addressId;
     }
 
-    public void setAddress(Long address_id) { // changed to type Address
-        this.address_id = address_id;
+    public void setAddressId(Long addressId) { // changed to type Address
+        this.addressId = addressId;
     }
 
     public Long getId() {
@@ -98,7 +98,7 @@ public class Person {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", address='" + address_id + '\'' +
+                ", address='" + addressId + '\'' +
                 '}';
     }
 

@@ -30,7 +30,7 @@ public class RentalRepositoryTest {
     List<Rental> rentals = List.of(rentalUnderTest1);
 
     @Test
-    public void testFindByUserIdr() {
+    public void testFindByUserId() {
         
         Mockito.when(rentalRepository.findByUserId(1L)).thenReturn(rentals);
         List<Rental> rental = rentalRepository.findByUserId(1L);
