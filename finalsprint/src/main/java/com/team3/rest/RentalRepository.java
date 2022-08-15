@@ -19,6 +19,6 @@ public interface RentalRepository extends JpaRepository<Rental, Long> {
     
     List<Rental> findByRentalPrice(@Param("rentalPrice") double rentalPrice); // How to set lower or upper bound?
     
-    List<Rental> findByAddressId(@Param("addressId") Long addressId); // how to search address sub-fields?
+    Rental findByAddressId(@Param("addressId") Long addressId); // how to search address sub-fields?
     
 }
