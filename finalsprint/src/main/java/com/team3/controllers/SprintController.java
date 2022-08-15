@@ -1,6 +1,8 @@
 package com.team3.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -58,16 +60,40 @@ public class SprintController {
     //     return rentalRepository.findByRentalPrice(rentalPrice);
     // }
 
-    // @GetMapping("/search/rental/rentalAddress/{rentalAddress}")
-    // public List<Rental> searchRentalByRentalAddress(@RequestParam(value = "rentalAddress") Address rentalAddress) {
-    //     return rentalRepository.findByRentalAddress(rentalAddress);
-    // }
+    @CrossOrigin
+    @GetMapping("/search/rental/rentalAddress/{addressId}")
+    public Optional<Address> searchRentalByRentalAddress(@RequestParam(value = "addressId") Long addressId) {
+        Rental rental = rentalRepository.findByAddressId(addressId);
+        if(!(rental == null)) {
+         return addressRepository.findById(addressId);
+        }
+        return null;
+    }
+
+    @CrossOrigin
+    @GetMapping("/search/rental/rentalAddress/city/{city}")
+    public List<Rental> searchRentalByRentalAddressCity(@RequestParam(value = "city") String city) {
+        ArrayList<Rental> rentals = new ArrayList<Rental>();
+        List<Address> addressList = addressRepository.findByCity(city);
+        if (!addressList.isEmpty()) {
+            addressList.forEach(address -> {
+                Rental temp = rentalRepository.findByAddressId(address.getId());
+                if (temp != null) {
+                    rentals.add(temp);
+                }
+
+            });
+        }
+        return rentals;
+    }
+
 
     // @GetMapping("/search/address/street/{street}")
     // public List<Address> searchAddressByStreet(@RequestParam(value = "street") String street) {
     //     return addressRepository.findByStreet(street);
-    // }
+    // }    
 
+    @CrossOrigin
     @GetMapping("/search/address/city/{city}")
     public List<Address> searchAddressByCity(@RequestParam(value = "city") String city) {
         return addressRepository.findByCity(city);
@@ -89,3 +115,7 @@ public class SprintController {
     // }
 
 }
+
+/**
+ * Demo, screen record, show ALL the functionality you want to be considered as part of the grade
+ */
