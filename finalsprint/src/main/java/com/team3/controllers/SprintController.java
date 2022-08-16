@@ -5,8 +5,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,6 +36,16 @@ public class SprintController {
     @GetMapping(value="/users/{userName}", produces = "application/json")
     public List<User> getUser(@RequestParam(value = "userName", defaultValue = "") String userName) {
         return userRepository.findByUserName(userName);
+    }
+
+    @CrossOrigin
+    @PostMapping(value="/users/add", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<User> addUser(@RequestBody User newUser) {
+        User user = userRepository.save(newUser);
+        if(user == null) {
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok(user);
     }
 
     @CrossOrigin
