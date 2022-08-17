@@ -35,7 +35,6 @@ public class Address {
         this.country = country;
     }
 
-    // added id get and set methods
     public Long getId() {
         return id;
     }

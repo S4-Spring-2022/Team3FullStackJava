@@ -9,8 +9,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.team3.rest.UserRepository;
 import com.team3.rest.User;
-import com.team3.rest.Person;
-import com.team3.rest.Address;
 
 import java.util.List;
 
@@ -20,11 +18,6 @@ public class UserRepositoryTest {
     @Mock
     private UserRepository userRepository = Mockito.mock(UserRepository.class);
 
-    // a lot of inter-dependance on other classes, but User is the result of multiple levels of aggregation
-    // Address addressUnderTest = new Address("some street", "some city", "some province", "some postal code",
-    //         "some country");
-    // Person personUnderTest1 = new Person("John", "Doe", "anemail@email.com", "1234567890", addressUnderTest);
-    // Person personUnderTest2 = new Person("Jane", "Doe", "anotheremail@email.com", "0987654321", addressUnderTest);
     User userUnderTest1 = new User("user1", "password", 1L);
     User userUnderTest2 = new User("user2", "password", 2L);
     List<User> users = List.of(userUnderTest1, userUnderTest2);

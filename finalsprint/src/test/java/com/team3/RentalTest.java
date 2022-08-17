@@ -4,14 +4,8 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.team3.rest.Rental;
-import com.team3.rest.User;
-import com.team3.rest.Address;
 
 public class RentalTest {
 

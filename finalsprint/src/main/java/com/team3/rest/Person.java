@@ -1,12 +1,9 @@
 package com.team3.rest;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -74,11 +71,11 @@ public class Person {
         this.phone = phone;
     }
 
-    public Long getAddressId() { // changed to type Address
+    public Long getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(Long addressId) { // changed to type Address
+    public void setAddressId(Long addressId) { 
         this.addressId = addressId;
     }
 

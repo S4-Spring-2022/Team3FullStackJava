@@ -11,8 +11,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.team3.rest.RentalRepository;
-import com.team3.rest.Address;
-import com.team3.rest.Person;
 import com.team3.rest.User;
 import com.team3.rest.Rental;
 
@@ -22,9 +20,6 @@ public class RentalRepositoryTest {
     @Mock
     private RentalRepository rentalRepository = Mockito.mock(RentalRepository.class);
 
-    // Address addressUnderTest = new Address("some street", "some city", "some province", "some postal code",
-    //         "some country");
-    // Person personUnderTest1 = new Person("John", "Doe", "4567891321", "thisemail@emil.com", addressUnderTest);
     User userUnderTest1 = new User("user1", "password", 1L);
     Rental rentalUnderTest1 = new Rental(1L, "active", "Single", LocalDate.now(), "8", 200.00, "Scenic Hideaway for a weekend getaway", 1L);
     List<Rental> rentals = List.of(rentalUnderTest1);

@@ -10,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.team3.rest.Address;
 import com.team3.rest.Person;
 import com.team3.rest.PersonRepository;
 
