@@ -1,12 +1,9 @@
 package com.team3.rest;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -20,14 +17,14 @@ public class Person {
     private String lastName;
     private String email;
     private String phone;
-    private Long addressId; 
+    private Long addressId;
 
     public Person() {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
         this.phone = "";
-        this.addressId = null; 
+        this.addressId = null;
     }
 
     public Person(String firstName, String lastName, String email, String phone, Long addressId) {
@@ -35,7 +32,7 @@ public class Person {
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.addressId = addressId; 
+        this.addressId = addressId;
     }
 
     public void setId(long id) {

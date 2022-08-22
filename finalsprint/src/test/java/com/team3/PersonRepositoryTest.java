@@ -10,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.team3.rest.Address;
 import com.team3.rest.Person;
 import com.team3.rest.PersonRepository;
 
@@ -19,17 +18,12 @@ public class PersonRepositoryTest {
 
     @Mock
     private PersonRepository personRepository;
-    
-    Person person1 = 
-    new Person("John", "Doe", "john_doe@email.com", "+1 709 777-1234", 1L);
-    Person person2 = 
-    new Person("Jane", "Dock", "jane_doe@email.com", "+1 709 777-5678", 2L);
-    Person person3 = 
-    new Person("Joe", "Doe", "joe_doe@email.com", "+1 709 777-9012", 3L);
-    Person person4 = 
-    new Person("Jack", "Doe", "jack_doe@email.com", "+1 709 777-3456", 4L);
 
-    
+    Person person1 = new Person("John", "Doe", "john_doe@email.com", "+1 709 777-1234", 1L);
+    Person person2 = new Person("Jane", "Dock", "jane_doe@email.com", "+1 709 777-5678", 2L);
+    Person person3 = new Person("Joe", "Doe", "joe_doe@email.com", "+1 709 777-9012", 3L);
+    Person person4 = new Person("Jack", "Doe", "jack_doe@email.com", "+1 709 777-3456", 4L);
+
     List<Person> personList = List.of(person1, person2, person3, person4);
 
     @Test
@@ -64,4 +58,3 @@ public class PersonRepositoryTest {
         assertEquals(person4, foundPerson.get(3));
     }
 }
-
